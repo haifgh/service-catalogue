@@ -1,0 +1,31 @@
+---
+- name: Ensure nginx is installed
+  apt:
+    name: nginx
+    state: latest
+  become: yes
+
+- name: Write redirect server to redirect http to https
+  template:
+    src: nginx-redirect.j2
+    dest: /etc/nginx/conf.d/{{ app_name }}-redirect.conf
+  become: yes
+  when: https
+  notify:
+    - restart nginx
+
+- name: Write django server nginx conf file
+  template:
+    src: nginx-django.j2
+    dest: /etc/nginx/conf.d/{{ app_name }}-django.conf
+  become: yes
+  notify:
+    - restart nginx
+
+- name: Remove default server
+  file:
+    path: "/etc/nginx/sites-enabled/default"
+    state: absent
+  become: yes
+  notify:
+    - restart nginx
