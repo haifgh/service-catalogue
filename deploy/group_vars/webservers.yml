@@ -11,7 +11,7 @@ angular_app_dir: "{{ app_dir }}/frontend/angular-app"
 react_app_dir: "{{ app_dir }}/frontend/react-app"
 
 # Git configuration
-git_repo: https://github.com/haifgh/service-catalogue.git
+git_repo: git@github.com:haifgh/service-catalogue.git
 
 app_settings: backend.settings
 app_wsgi_module: backend.wsgi

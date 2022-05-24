@@ -1,4 +1,4 @@
-git_branch: develop
+git_branch: master
 
 # DNS configurations
 domain: localhost
@@ -6,7 +6,7 @@ domain: localhost
 # django config
 debug_mode: True
 
-secret_key: sdlgbdfkjgb94ibrego493gtbhr3iuvfwg944tre
+secret_key: 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
 allowed_hosts: 127.0.0.1
 
 default_superuser_email: admin@admin.com
