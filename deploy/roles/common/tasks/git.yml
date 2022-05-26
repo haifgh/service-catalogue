@@ -12,10 +12,8 @@
     repo: "{{ git_repo }}"
     dest: "{{ app_dir }}"
     recursive: yes
-    accept_hostkey: yes
     version: "{{ git_branch }}"
     force: yes
-
 - name: Change project dir owner
   command: chown -R {{ linux_user }} {{ app_dir }}
   become: yes
